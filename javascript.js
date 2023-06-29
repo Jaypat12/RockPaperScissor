@@ -1,3 +1,30 @@
+const images = Array.from(document.querySelectorAll('.Images'));
+const message = document.querySelector(".message");
+const playerScore = document.querySelector(".player-score");
+const computerScore = document.querySelector(".computer-score");
+const mforplayer = document.querySelector(".pdecision")
+const mforcomputer = document.querySelector(".cdecision")
+const image1 = document.querySelector(".img1");
+
+var computerCount = 0;
+var playerCount = 0;
+
+
+images.forEach((img) =>
+    img.addEventListener('click',() => {
+        if(playerCount >=5 || computerCount >=5){
+            playerCount = 0;
+            computerCount = 0;
+            playerScore.textContent = "0";
+            computerScore.textContent = "0";
+            return;
+        }
+        else{
+            game(img.dataset.set)
+        }
+    }));
+
+
 function computerChoice(){
     let num = Math.floor(Math.random() * 3);
     if(num===0){
@@ -18,61 +45,54 @@ function checkingWhoWins(computerChoice, playerChoice){
     }
     else if(lPlayerChoice === "rock"){
         if(computerChoice === "paper"){
-            return "Computer Wins!!!"
+            return "Computer Wins Round!!!"
         }
         else{
-            return "Player Wins!!!"
+            return "Player Wins Round!!!"
         }
     }
     else if(lPlayerChoice === "paper"){
         if(computerChoice === "scissor"){
-            return "Computer Wins!!!"
+            return "Computer Wins Round!!!"
         }
         else{
-            return "Player Wins!!!"
+            return "Player Wins Round!!!"
         }
     }
     else if(lPlayerChoice === "scissor"){
         if(computerChoice === "rock"){
-            return "Computer Wins!!!"
+            return "Computer Wins Round!!!"
         }
         else{
-            return "Player Wins!!!"
+            return "Player Wins Round!!!"
         }
     }
 }
 
-function game(){
-    var computerCount = 0;
-    var playerCount = 0;
-    let playerC;
-    let computerC;
-    let t = true;
-    const options = ["Rock","Paper","Scissor"];
+function game(playerchoice){
+    let pchoice = playerchoice.toLowerCase();
+    let cchoice = computerChoice();
 
-    while(t){
-        playerC = prompt("Rock, Paper, or Scissors?");
-        while(!(options.includes(playerC))){
-         console.log("Please Enter: Rock or Paper or Scissor!")
-         playerC = prompt("Rock, Paper, or Scissors?");
-        }
-        computerC = computerChoice();
-        let answer = checkingWhoWins(computerC,playerC);
-        if(answer === "Computer Wins!!!"){
-            computerCount++;
-        }else if(answer === "Player Wins!!!"){
-            playerCount++;
-        }
-        console.log(`ComputerScore = ${computerCount}`);
-        console.log(`PlayerScore = ${playerCount}`);
-        if(computerCount == 5 || playerCount === 5){
-        t=false;
-            if(computerCount == 5){
-                console.log("Computer Wins!!!");
-            }
-            else{}
-                console.log("Player Wins!!!");
-        }
-        }
-}
-game();
+    let result = checkingWhoWins(cchoice,pchoice);
+
+    if(result === "Player Wins Round!!!"){
+        playerCount++;
+    }
+    else if(result === "Computer Wins Round!!!"){
+        computerCount++;
+    }
+
+    playerScore.textContent = playerCount;
+    computerScore.textContent = computerCount;
+    mforcomputer.textContent = `Player choose ${pchoice}`;
+    mforplayer.textContent = `Computer choose ${cchoice}`;
+    message.textContent = result;
+
+    if(playerCount === 5){
+        message.textContent = "Player Wins";
+    }
+    else if(computerCount === 5 ){
+        message.textContent = "Computer Wins";
+    }
+    }
+

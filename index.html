@@ -4,9 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src = javascript.js></script>
+    <script src = javascript.js defer></script>
+    <link href="Styling.css" rel="stylesheet">
 </head>
-<body>
-
+<body class = body>
+    <div class = Title>
+        <h1 class="TitleHeader"> <strong>ROCK PAPER SCISSOR</strong></h1>
+    </div>
+    <div class = pctitles>
+        <h2 class="playerheader">Player</h2>
+        <h2 class="computerheader">Computer</h2>
+    </div>
+    <div class="scoring">
+        <div class = "player-score">0</div>
+        <div class = "dash">-</div>
+        <div class = "computer-score">0</div>
+    </div>
+         <div class="message"></div>
+    </div>
+    <div class = Image>
+        <img class = "Images img1" data-set="rock" src="Images/rock.png" alt ="Rock">
+        <img class = "Images img2" data-set="rock" src="Images/paper.png" alt="Paper">
+        <img  class = "Images img3" data-set="rock" src="Images/scissors.png" alt="Scissor">
+    </div>
+    <div class = pctitles2>
+        <div>
+        <h2 class="playerheader2">Player</h2>
+        <div >
+            <p class = pdecision></p>
+        </div>
+        </div>
+        <div>
+        <h2 class="computerheader2">Computer</h2>
+        <div >
+            <p class = cdecision></p>
+        </div>
+        </div>
+    </div>
 </body>
 </html>
