@@ -1,0 +1,99 @@
+.body{
+    background-color: #ffea00;
+}
+
+.Title{
+    display: flex;
+    justify-content: center;
+}
+
+.TitleHeader{
+    font-size: 40px;
+    font-weight: 700;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.pctitles{
+    display: flex;
+    justify-content: center;
+}
+
+.playerheader{
+    margin-left: 20px;
+}
+
+.computerheader{
+    margin-left: 55px;
+}
+
+.scoring  {
+    display:flex;
+    justify-content: center;
+}
+
+.player-score {
+    font-size: 40px;
+}
+
+.dash{
+    font-size: 40px;
+    padding: 0px 60px 0px 60px;
+}
+
+.computer-score{
+    font-size: 40px;
+}
+
+.message{
+    font-size: 30px;
+    display:flex;
+    justify-content: center;
+    padding:30px 0px 30px 0px
+}
+
+.Image{
+    display: flex;
+    justify-content: space-around;
+}
+
+.ImageHover{
+    position: relative;
+    top:-100px;
+}
+
+.pctitles2{
+    display: flex;
+    justify-content: center;
+}
+
+
+.computerheader2{
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    margin-left: 100px;
+
+
+}
+
+.playerheader2{
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    margin-right: 75px;
+}
+
+.pdecision{
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    margin-right: 75px;
+}
+
+.cdecision{
+    font-size: 30px;
+    display:flex;
+    justify-content: center;
+    margin-left: 100px;
+}
